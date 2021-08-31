@@ -27,13 +27,15 @@ class _UserFormState extends State<UserForm> {
 
 
   @override
-    void didChangeDependencies() {
-      super.didChangeDependencies();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
 
-      final User user = ModalRoute.of(context)?.settings.arguments as User; 
-
-      _loadFormData(user);
+    final user = ModalRoute.of(context)!.settings.arguments as User?;
+   
+    if(user!=null){
+    _loadFormData(user);
     }
+  }
 
   @override
   Widget build(BuildContext context) {
