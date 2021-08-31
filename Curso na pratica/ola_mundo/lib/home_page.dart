@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_controller.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -22,13 +24,11 @@ class HomePageState extends State<HomePage> {
       )),
       body: Center(
         child: Switch(
-          value: isDark,
+          value: AppController.instance.isDark,
           onChanged:(value){
-            setState((){
-              isDark = value;
-            });
-        })
-      ),
+            AppController.instance.changeTheme();
+            })
+        ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_circle),
         onPressed: () {
