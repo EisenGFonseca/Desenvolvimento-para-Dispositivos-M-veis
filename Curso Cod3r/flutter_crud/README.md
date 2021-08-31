@@ -1,8 +1,4 @@
-# flutter_crud
-
-A new Flutter project.
-
-## 02 - Atividade Obrigatória - Fundamentos de Flutter: 20 pontos
+# 02 - Atividade Obrigatória - Fundamentos de Flutter: 20 pontos
 Segue a atividade a ser feita com o Flutter. Envie pelo GITHUB.
 
 1) Vá no site: Cod3R
