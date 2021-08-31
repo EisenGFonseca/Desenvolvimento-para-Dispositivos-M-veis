@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/models/user.dart';
+import 'package:flutter_crud/provider/users.dart';
 import 'package:flutter_crud/routes/app_routes.dart';
+import 'package:provider/provider.dart';
 
 class UserTile extends StatelessWidget {
 
@@ -11,8 +13,10 @@ const UserTile(this.user);
   @override
   Widget build(BuildContext context) {
     final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
+   
     ? CircleAvatar(child: Icon(Icons.person))
     : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
+   
     return ListTile(
       leading: avatar,
       title: Text(user.name),
@@ -34,7 +38,31 @@ const UserTile(this.user);
           IconButton(
             icon: Icon(Icons.delete),
             color: Colors.red,
-            onPressed: () {}
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (ctx) =>  AlertDialog(
+                  title: Text('Exlcuir usuário'),
+                  content: Text('Tem certeza?'),
+                  actions: <Widget>[
+                    // ignore: deprecated_member_use
+                    FlatButton(
+                      child: Text('Não'),
+                      onPressed: () => Navigator.of(context).pop(false),
+                      ),
+                    // ignore: deprecated_member_use
+                    FlatButton(
+                      child: Text('Sim'),
+                      onPressed: () => Navigator.of(context).pop(true),
+                      ),
+                  ],
+                ) 
+              ).then((confirmed){
+                if (confirmed){
+                  Provider.of<Users>(context, listen: false).remove(user);
+                }
+              });
+            }
           ),
           ],
         )

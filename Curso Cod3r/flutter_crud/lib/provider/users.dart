@@ -1,22 +1,21 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_crud/data/dummy_users.dart';
 import 'package:flutter_crud/models/user.dart';
 
 class Users with ChangeNotifier{
-  Map<String, User> _itens = {...DUMMY_USERS};
+  final Map<String, User> _items = {...DUMMY_USERS};
 
   List<User> get all {
-    return [..._itens.values];
+    return [..._items.values];
   }
 
   int get count {
-    return _itens.length;
+    return _items.length;
   }
 
   User byIndex(int i){
-    return _itens.values.elementAt(i);
+    return _items.values.elementAt(i);
   }
 
   void put(User user){
@@ -25,22 +24,22 @@ class Users with ChangeNotifier{
     }
 
     if(user.id != null &&
-        user.id.trim().isNotEmpty &&
-        _itens.containsKey(user.id)){
-      _itens.update(
-        user.id,
-          (value) => User(
+       user.id.trim().isNotEmpty &&
+       _items.containsKey(user.id)) {
+      _items.update(
+        user.id,(_) => User(
           id: user.id,
           name: user.name,
           email: user.email,
           avatarUrl: user.avatarUrl,
-       ),
+        ),
       );
-    } else {
+    } 
+    //adicionar
+    else {
       final id = Random().nextDouble().toString();
-      _itens.putIfAbsent(
-        id,
-        () => User(
+      _items.putIfAbsent(
+        id, () => User(
           id: id,
           name: user.name,
           email: user.email,
@@ -51,11 +50,11 @@ class Users with ChangeNotifier{
     notifyListeners();
   }
 
-void remove(User user){
-  if(user != null && user.id != null){
-    _itens.remove(user.id);
-    notifyListeners();
+  void remove(User user){
+    if(user != null && user.id != null){
+      _items.remove(user.id);
+      notifyListeners();
+    }
   }
-}
 
 }
