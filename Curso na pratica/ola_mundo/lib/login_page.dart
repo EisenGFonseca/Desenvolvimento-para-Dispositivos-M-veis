@@ -24,6 +24,13 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
+                Image.network(
+                  'https://img.icons8.com/ios/100/000000/lock-screen.png'
+                ),
+                SizedBox(
+                    height: 30,
+                  ),
                   TextField(
                     onChanged: (text) => email = text,
                     keyboardType: TextInputType.emailAddress,
@@ -51,9 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (email == 'eisen.fonseca@gmail.com' &&
                             senha == '12345') {
                           print('Login correto');
-                          Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => HomePage())
-                          );
+                          Navigator.of(context).pushReplacementNamed('/home');
                         } else {
                           print('Login errado');
                         }
