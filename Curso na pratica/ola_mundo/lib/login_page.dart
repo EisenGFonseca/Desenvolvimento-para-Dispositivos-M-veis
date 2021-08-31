@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -50,6 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                         if (email == 'eisen.fonseca@gmail.com' &&
                             senha == '12345') {
                           print('Login correto');
+                          Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage())
+                          );
                         } else {
                           print('Login errado');
                         }
