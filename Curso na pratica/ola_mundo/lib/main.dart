@@ -13,11 +13,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.blue),
-      home: Container(
-        child: Center(
-          child: Text('Material App')
-        )
-      )
+      home: HomePage(),
     );
   }
 }
@@ -30,8 +26,22 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+
+int counter = 0;
+
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return Container (
+      child: Center(
+        child: GestureDetector(
+          child: Text('Click: $counter'),
+          onTap: (){
+            setState(() {
+              counter ++;
+            });
+          }
+        )
+      ),
+    );
   }
 }
