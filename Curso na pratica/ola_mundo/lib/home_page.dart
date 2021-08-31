@@ -24,6 +24,9 @@ class HomePageState extends State<HomePage> {
         child: Switch(
           value: isDark,
           onChanged:(value){
+            setState((){
+              isDark = value;
+            });
         })
       ),
       floatingActionButton: FloatingActionButton(
