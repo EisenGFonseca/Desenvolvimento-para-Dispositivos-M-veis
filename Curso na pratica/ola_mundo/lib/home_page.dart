@@ -32,6 +32,30 @@ class HomePageState extends State<HomePage> {
           children: [
             Center(
               child: CustomSwitch()),
+              Container(
+                height: 160,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 100,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.red,
+                  ),
+                ]
+              ),
           ],
         ),
       ),
