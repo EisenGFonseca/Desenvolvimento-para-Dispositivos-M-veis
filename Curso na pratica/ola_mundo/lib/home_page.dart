@@ -13,29 +13,100 @@ class HomePageState extends State<HomePage> {
   int counter = 0;
   bool isDark = false;
 
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-            "App Flutter ADS",
-          ),
-          actions: [CustomSwitch()],
+        title: Text(
+          "App Flutter ADS",
+        ),
+        actions: [CustomSwitch()],
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
-            Center(
-              child: CustomSwitch()),
-              Container(
-                height: 160,
-              ),
-              Row(
+            Center(child: CustomSwitch()),
+            Container(
+              height: 160,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -45,8 +116,8 @@ class HomePageState extends State<HomePage> {
                     color: Colors.green,
                   ),
                   Container(
-                    width: 50,
-                    height: 100,
+                    width: 100,
+                    height: 50,
                     color: Colors.yellow,
                   ),
                   Container(
@@ -54,8 +125,7 @@ class HomePageState extends State<HomePage> {
                     height: 50,
                     color: Colors.red,
                   ),
-                ]
-              ),
+                ]),
           ],
         ),
       ),
@@ -75,9 +145,9 @@ class CustomSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Switch(
-          value: AppController.instance.isDark,
-          onChanged:(value){
-            AppController.instance.changeTheme();
-            });
+        value: AppController.instance.isDark,
+        onChanged: (value) {
+          AppController.instance.changeTheme();
+        });
   }
 }
