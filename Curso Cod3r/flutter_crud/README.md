@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
+## 02 - Atividade Obrigatória - Fundamentos de Flutter: 20 pontos
+Segue a atividade a ser feita com o Flutter. Envie pelo GITHUB.
 
-This project is a starting point for a Flutter application.
+1) Vá no site: Cod3R
 
-A few resources to get you started if this is your first Flutter project:
+2) Faça sua matricula no curso;
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+3) Envie o código fonte da primeira parte do curso pelo GitHub:Aplicação Cadastro Usuário..
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
