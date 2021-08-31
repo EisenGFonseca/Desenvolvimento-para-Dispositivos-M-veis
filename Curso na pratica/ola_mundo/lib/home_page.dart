@@ -23,12 +23,7 @@ class HomePageState extends State<HomePage> {
         "App Flutter ADS",
       )),
       body: Center(
-        child: Switch(
-          value: AppController.instance.isDark,
-          onChanged:(value){
-            AppController.instance.changeTheme();
-            })
-        ),
+        child: CustomSwitch()),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_circle),
         onPressed: () {
@@ -38,5 +33,18 @@ class HomePageState extends State<HomePage> {
         },
       ),
     );
+  }
+}
+
+
+
+class CustomSwitch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+          value: AppController.instance.isDark,
+          onChanged:(value){
+            AppController.instance.changeTheme();
+            });
   }
 }
