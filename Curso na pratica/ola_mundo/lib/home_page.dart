@@ -20,8 +20,10 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        "App Flutter ADS",
-      )),
+            "App Flutter ADS",
+          ),
+          actions: [CustomSwitch()],
+      ),
       body: Center(
         child: CustomSwitch()),
       floatingActionButton: FloatingActionButton(
@@ -35,8 +37,6 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
-
-
 
 class CustomSwitch extends StatelessWidget {
   @override
