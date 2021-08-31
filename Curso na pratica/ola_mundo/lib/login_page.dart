@@ -8,18 +8,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = "";
+  String senha = "";
+
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Scaffold(
+        body: SingleChildScrollView(
       child: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextField(
+                    onChanged: (text) => email = text,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       labelText: 'Email',
@@ -30,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 30,
                   ),
                   TextField(
+                    onChanged: (text) => senha = text,
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Senha',
@@ -37,11 +43,20 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 25,
                   ),
-                  ElevatedButton(onPressed: () {}, child: Text('Login')),
+                  ElevatedButton(
+                      onPressed: () {
+                        if (email == 'eisen.fonseca@gmail.com' &&
+                            senha == '12345') {
+                          print('Login correto');
+                        } else {
+                          print('Login errado');
+                        }
+                      },
+                      child: Text('Login')),
                 ],
               ))),
-    );
+    ));
   }
 }
