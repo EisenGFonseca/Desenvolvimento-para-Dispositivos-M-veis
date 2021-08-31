@@ -19,16 +19,11 @@ int counter = 0;
         "App Flutter ADS",
         )
       ),
-      body: Center(
-          child: GestureDetector(
-            child: Text('Click: $counter', style: TextStyle(fontSize: 50)),
-            onTap: (){
-              setState(() {
-                counter --;
-              });
-            }
-          )
-        ),
+      body: Container(
+        height: 50,
+        width: 500,
+        color: Colors.red,
+      ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add_circle),
           onPressed: () {
