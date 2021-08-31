@@ -24,11 +24,19 @@ int counter = 0;
             child: Text('Click: $counter', style: TextStyle(fontSize: 50)),
             onTap: (){
               setState(() {
-                counter ++;
+                counter --;
               });
             }
           )
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add_circle),
+          onPressed: () {
+            setState(() {
+                counter ++;
+              });
+          },
+          ),
     );
   }
 }
