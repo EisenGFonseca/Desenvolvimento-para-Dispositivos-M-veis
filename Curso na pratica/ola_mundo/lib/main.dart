@@ -21,3 +21,17 @@ class AppWidget extends StatelessWidget {
     );
   }
 }
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState(){
+    return HomePageState();
+  }
+}
+
+class HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+}
