@@ -4,6 +4,7 @@ import 'package:projeto_final/routes/app_routes.dart';
 import 'package:projeto_final/views/livro_form.dart';
 import 'package:projeto_final/views/livro_form_cad.dart';
 import 'package:projeto_final/views/livro_list.dart';
+import 'package:projeto_final/views/login_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         routes : {
-          AppRoutes.HOME: (_) => LivroList(),
+          AppRoutes.HOME: (_) => LoginPage(),
+          AppRoutes.HOME_LIST: (_) => LivroList(),
           AppRoutes.LIVRO_FORM: (_) => LivroForm(),
           AppRoutes.LIVRO_FORM_CAD: (_) => LivroFormCad()
         }

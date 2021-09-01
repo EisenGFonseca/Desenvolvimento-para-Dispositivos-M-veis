@@ -6,16 +6,16 @@ const DUMMY_LIVROS = {
     name: 'A Batalha do Apocalipse',
     autor: 'Eduardo Spohr',
     categoria: 'Ficçao',
-    andamento: '0%',
-    capaUrl: '',
+    andamento: '73%',
+    capaUrl: 'https://images-na.ssl-images-amazon.com/images/I/81IOICDo00L.jpg',
     ),
     
     '2': const Livro(
     id: '2',
-    name: 'Livro 2',
-    autor: 'Autor 2',
-    categoria: 'Nada',
-    andamento: '0%',
-    capaUrl: '',
+    name: 'Do Mil ao Milhão',
+    autor: 'Tiago Nigro',
+    categoria: 'Educação',
+    andamento: '24%',
+    capaUrl: 'https://avongroup.vteximg.com.br/arquivos/ids/165351/Livro_Do_Mil_ao_Milhao__Thiago_674.jpg?v=637305301895670000',
     ),
   };
