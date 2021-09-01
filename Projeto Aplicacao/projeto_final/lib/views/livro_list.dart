@@ -11,13 +11,13 @@ class LivroList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de usuários'),
+        title: Text('Lista de Livros'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
               Navigator.of(context).pushNamed(
-                AppRoutes.LIVRO_FORM
+                AppRoutes.LIVRO_FORM_CAD
               );
             }
           ),

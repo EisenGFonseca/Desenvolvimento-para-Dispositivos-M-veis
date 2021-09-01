@@ -3,13 +3,13 @@ import 'package:projeto_final/provider/livros.dart';
 import 'package:provider/provider.dart';
 import 'package:projeto_final/models/livro.dart';
 
-class LivroForm extends StatefulWidget {
+class LivroFormCad extends StatefulWidget {
 
   @override
-  _LivroFormState createState() => _LivroFormState();
+  _LivroFormCadState createState() => _LivroFormCadState();
 }
 
-class _LivroFormState extends State<LivroForm> {
+class _LivroFormCadState extends State<LivroFormCad> {
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
@@ -41,7 +41,7 @@ class _LivroFormState extends State<LivroForm> {
   Widget build(BuildContext context) {
    return Scaffold(
       appBar: AppBar(
-        title: Text('Edição de Livro'),
+        title: Text('Cadastro de Livro'),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.save),

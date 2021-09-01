@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_final/provider/livros.dart';
 import 'package:projeto_final/routes/app_routes.dart';
 import 'package:projeto_final/views/livro_form.dart';
+import 'package:projeto_final/views/livro_form_cad.dart';
 import 'package:projeto_final/views/livro_list.dart';
 import 'package:provider/provider.dart';
 
@@ -18,13 +19,14 @@ class MyApp extends StatelessWidget {
       ),
     ],
     child: MaterialApp(
-        title: 'Gerencimento de livros',
+        title: 'Gerenciamento de Livros',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
         ),
         routes : {
           AppRoutes.HOME: (_) => LivroList(),
-          AppRoutes.LIVRO_FORM: (_) => LivroForm()
+          AppRoutes.LIVRO_FORM: (_) => LivroForm(),
+          AppRoutes.LIVRO_FORM_CAD: (_) => LivroFormCad()
         }
       ),
     );

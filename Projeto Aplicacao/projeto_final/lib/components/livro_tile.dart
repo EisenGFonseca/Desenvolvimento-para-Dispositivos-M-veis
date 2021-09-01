@@ -20,7 +20,7 @@ const LivroTile(this.livro);
     return ListTile(
       leading: avatar,
       title: Text(livro.name),
-      subtitle: Text(livro.autor),
+      subtitle: Text('Andamento da leitura: '+ livro.andamento),
       trailing: Container(
         width: 100,
         child: Row(
@@ -43,7 +43,7 @@ const LivroTile(this.livro);
                 context: context,
                 builder: (ctx) =>  AlertDialog(
                   title: Text('Exlcuir o Livro'),
-                  content: Text('Tem certeza?'),
+                  content: Text('Tem certeza que deseja excluir esse livro?'),
                   actions: <Widget>[
                     // ignore: deprecated_member_use
                     FlatButton(

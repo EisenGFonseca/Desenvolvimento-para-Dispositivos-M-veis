@@ -3,6 +3,7 @@ class Livro {
   final String name;
   final String autor;
   final String categoria;
+  final String andamento;
   final String capaUrl;
 
   const Livro({
@@ -10,6 +11,7 @@ class Livro {
     required this.name,
     required this.autor,
     required this.categoria,
+    required this.andamento,
     required this.capaUrl
   });
 }

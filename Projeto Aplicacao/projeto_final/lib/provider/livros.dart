@@ -32,6 +32,7 @@ class Livros with ChangeNotifier{
           name: livro.name,
           autor: livro.autor,
           categoria: livro.categoria,
+          andamento: livro.andamento,
           capaUrl: livro.capaUrl,
         ),
       );
@@ -45,6 +46,7 @@ class Livros with ChangeNotifier{
           name: livro.name,
           autor: livro.autor,
           categoria: livro.categoria,
+          andamento: livro.andamento,
           capaUrl: livro.capaUrl,
         ),
       );

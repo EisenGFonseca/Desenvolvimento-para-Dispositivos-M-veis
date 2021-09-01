@@ -6,7 +6,8 @@ const DUMMY_LIVROS = {
     name: 'A Batalha do Apocalipse',
     autor: 'Eduardo Spohr',
     categoria: 'Ficçao',
-    capaUrl: ''
+    andamento: '0%',
+    capaUrl: '',
     ),
     
     '2': const Livro(
@@ -14,6 +15,7 @@ const DUMMY_LIVROS = {
     name: 'Livro 2',
     autor: 'Autor 2',
     categoria: 'Nada',
-    capaUrl: ''
+    andamento: '0%',
+    capaUrl: '',
     ),
   };
