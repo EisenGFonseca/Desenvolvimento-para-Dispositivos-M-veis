@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
     ],
     child: MaterialApp(
-        title: 'Gerencimento de livros',
+        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
