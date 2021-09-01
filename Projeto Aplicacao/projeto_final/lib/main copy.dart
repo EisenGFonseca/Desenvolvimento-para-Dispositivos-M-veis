@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_final/provider/users.dart';
+import 'package:projeto_final/provider/livros.dart';
 import 'package:projeto_final/routes/app_routes.dart';
-import 'package:projeto_final/views/user_form.dart';
-import 'package:projeto_final/views/user_list.dart';
+import 'package:projeto_final/views/livro_form.dart';
+import 'package:projeto_final/views/livro_list.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
       ChangeNotifierProvider(
-        create: (ctx) => Users(),
+        create: (ctx) => Livros(),
       ),
     ],
     child: MaterialApp(
@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes : {
-          AppRoutes.HOME: (_) => UserList(),
-          AppRoutes.USER_FORM: (_) => UserForm()
+          AppRoutes.HOME: (_) => LivroList(),
+          AppRoutes.LIVRO_FORM: (_) => LivroForm()
         }
       ),
     );

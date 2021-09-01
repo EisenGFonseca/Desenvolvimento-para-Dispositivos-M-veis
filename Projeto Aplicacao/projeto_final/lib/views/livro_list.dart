@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_final/components/user_tile.dart';
-import 'package:projeto_final/provider/users.dart';
+import 'package:projeto_final/components/livro_tile.dart';
+import 'package:projeto_final/provider/livros.dart';
 import 'package:projeto_final/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
-class UserList extends StatelessWidget {
+class LivroList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Users users = Provider.of(context);
+    final Livros livros = Provider.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -17,15 +17,15 @@ class UserList extends StatelessWidget {
             icon: Icon(Icons.add),
             onPressed: () {
               Navigator.of(context).pushNamed(
-                AppRoutes.USER_FORM
+                AppRoutes.LIVRO_FORM
               );
             }
           ),
         ]
       ),
       body: ListView.builder(
-        itemCount: users.count,
-        itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
+        itemCount: livros.count,
+        itemBuilder: (ctx, i) => LivroTile(livros.byIndex(i)),
         )
     );
   }

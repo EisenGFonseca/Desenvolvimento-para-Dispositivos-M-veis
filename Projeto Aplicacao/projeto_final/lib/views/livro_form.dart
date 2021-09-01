@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_final/provider/users.dart';
+import 'package:projeto_final/provider/livros.dart';
 import 'package:provider/provider.dart';
-import 'package:projeto_final/models/user.dart';
+import 'package:projeto_final/models/livro.dart';
 
-class UserForm extends StatefulWidget {
+class LivroForm extends StatefulWidget {
 
   @override
-  _UserFormState createState() => _UserFormState();
+  _LivroFormState createState() => _LivroFormState();
 }
 
-class _UserFormState extends State<UserForm> {
+class _LivroFormState extends State<LivroForm> {
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
 
-    void _loadFormData(User user){
-      if(user != null){
-        _formData['id'] = user.id;
-        _formData['name'] = user.name;
-        _formData['email'] = user.email;
-        _formData['avatarUrl'] = user.avatarUrl;
+    void _loadFormData(Livro livro){
+      if(livro != null){
+        _formData['id'] = livro.id;
+        _formData['name'] = livro.name;
+        _formData['autor'] = livro.autor;
+        _formData['categoria'] = livro.categoria;
+        _formData['capaUrl'] = livro.capaUrl;
       }
     }
 
@@ -28,10 +29,10 @@ class _UserFormState extends State<UserForm> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final user = ModalRoute.of(context)!.settings.arguments as User?;
+    final livro = ModalRoute.of(context)!.settings.arguments as Livro?;
    
-    if(user!=null){
-    _loadFormData(user);
+    if(livro!=null){
+    _loadFormData(livro);
     }
   }
 
@@ -49,11 +50,12 @@ class _UserFormState extends State<UserForm> {
                 if (isValid) {
                   _form.currentState!.save();
 
-                  Provider.of<Users>(context, listen: false).put(User(
+                  Provider.of<Livros>(context, listen: false).put(Livro(
                     id: _formData['id'].toString(),
                     name: _formData['name'].toString(),
-                    email: _formData['email'].toString(),
-                    avatarUrl: _formData['avatarUrl'].toString(),
+                    autor: _formData['autor'].toString(),
+                    categoria: _formData['categoria'].toString(),
+                    capaUrl: _formData['capaUrl'].toString(),
                   ));
 
                   Navigator.of(context).pop();
@@ -84,15 +86,21 @@ class _UserFormState extends State<UserForm> {
             ),
 
             TextFormField(
-              initialValue: _formData['email'],
-              decoration: InputDecoration(labelText: 'E-mail'),
-              onSaved: (value) => _formData['email'] = value!,
+              initialValue: _formData['autor'],
+              decoration: InputDecoration(labelText: 'Autor'),
+              onSaved: (value) => _formData['autor'] = value!,
             ),
 
             TextFormField(
-              initialValue: _formData['avatarUrl'],
-              decoration: InputDecoration(labelText: 'Url do Avatar'),
-              onSaved: (value) => _formData['avatarUrl'] = value!,
+              initialValue: _formData['categoria'],
+              decoration: InputDecoration(labelText: 'Categoria'),
+              onSaved: (value) => _formData['categoria'] = value!,
+            ),
+
+            TextFormField(
+              initialValue: _formData['capaUrl'],
+              decoration: InputDecoration(labelText: 'Url da capa do livro'),
+              onSaved: (value) => _formData['capaUrl'] = value!,
             )
           ]),
         ),

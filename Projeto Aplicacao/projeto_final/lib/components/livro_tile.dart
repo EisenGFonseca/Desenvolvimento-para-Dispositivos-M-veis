@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_final/models/user.dart';
-import 'package:projeto_final/provider/users.dart';
+import 'package:projeto_final/models/livro.dart';
+import 'package:projeto_final/provider/livros.dart';
 import 'package:projeto_final/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
-class UserTile extends StatelessWidget {
+class LivroTile extends StatelessWidget {
 
-final User user;
+final Livro livro;
 
-const UserTile(this.user);
+const LivroTile(this.livro);
 
   @override
   Widget build(BuildContext context) {
-    final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
+    final avatar = livro.capaUrl == null || livro.capaUrl.isEmpty
    
     ? CircleAvatar(child: Icon(Icons.person))
-    : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
+    : CircleAvatar(backgroundImage: NetworkImage(livro.capaUrl));
    
     return ListTile(
       leading: avatar,
-      title: Text(user.name),
-      subtitle: Text(user.email),
+      title: Text(livro.name),
+      subtitle: Text(livro.autor),
       trailing: Container(
         width: 100,
         child: Row(
@@ -30,8 +30,8 @@ const UserTile(this.user);
             color:Colors.orange,
             onPressed: () {
                 Navigator.of(context).pushNamed(
-                AppRoutes.USER_FORM,
-                arguments: user,
+                AppRoutes.LIVRO_FORM,
+                arguments: livro,
               );
             }
           ),
@@ -42,7 +42,7 @@ const UserTile(this.user);
               showDialog(
                 context: context,
                 builder: (ctx) =>  AlertDialog(
-                  title: Text('Exlcuir usuário'),
+                  title: Text('Exlcuir o Livro'),
                   content: Text('Tem certeza?'),
                   actions: <Widget>[
                     // ignore: deprecated_member_use
@@ -59,7 +59,7 @@ const UserTile(this.user);
                 ) 
               ).then((confirmed){
                 if (confirmed){
-                  Provider.of<Users>(context, listen: false).remove(user);
+                  Provider.of<Livros>(context, listen: false).remove(livro);
                 }
               });
             }
